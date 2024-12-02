@@ -36,4 +36,13 @@ public class LivingThing {
             System.out.printf("%sは倒れた。\n", name);
         }
     }
+
+    public int getHitPoint() {
+        return hitPoint;
+    }
+    
+    public int getAttack() {
+        return attack; // LivingThing の attack フィールド
+    }
+    
 }
