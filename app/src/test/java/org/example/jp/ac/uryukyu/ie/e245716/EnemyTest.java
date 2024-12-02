@@ -14,11 +14,17 @@ public class EnemyTest {
      */
     @Test
     void attackTest() {
-        int defaultHeroHp = 100;
-        Hero demoHero = new Hero("デモ勇者", defaultHeroHp, 100);
-        Enemy slime = new Enemy("スライムもどき", 10, 100);
+        int defaultHeroHp = 100; // ヒーローの初期HP
+        Hero demoHero = new Hero("デモ勇者", defaultHeroHp, 100); // ヒーローを準備
+        Enemy slime = new Enemy("スライムもどき", 10, 100); // 敵を準備
+
+        // (2) ヒーローが攻撃して敵を一撃で倒す
         demoHero.attack(slime);
+
+        // (3) 倒れた敵が攻撃を試みる
         slime.attack(demoHero);
-        assertEquals(defaultHeroHp, demoHero.hitPoint);
+
+        // ヒーローのHPが減っていないことを確認
+        assertEquals(defaultHeroHp, demoHero.getHitPoint());
     }
 }
